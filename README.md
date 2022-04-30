@@ -1,4 +1,4 @@
-# Adaptive Convolutional Dictionary Network for CT Metal Artifact Reduction 【IJCAI2022】
+# Adaptive Convolutional Dictionary Network for CT Metal Artifact Reduction (IJCAI2022)
 [Hong Wang](https://hongwang01.github.io/), Yuexiang Li, [Deyu Meng](http://gr.xjtu.edu.cn/web/dymeng), [Yefeng Zheng](https://sites.google.com/site/yefengzheng/)
 
 
