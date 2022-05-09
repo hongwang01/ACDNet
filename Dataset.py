@@ -120,8 +120,7 @@ class MARValDataset(udata.Dataset):
         return self.sample_num
 
     def __getitem__(self, idx):
-        idx = random.randint(self.start, self.end -1)
-        gt_dir = self.mat_files[idx]
+        gt_dir = self.mat_files[idx+self.start]
      #   random_mask = random.randint(80,89)      # for original validation, the total number of metal masks for validation is 10
         random_mask = 80   # for demo validation,  we only provide one validation data as "train_640geo/000129_03_01/115/80.h5" due to the limitation of file size about supplementary material
 
