@@ -4,7 +4,12 @@
 [Arxiv&&SM](https://arxiv.org/pdf/2205.07471.pdf)
 
 ## Abstract
-Inspired by the great success of deep neural networks, learning-based methods have gained promising performances for metal artifact reduction (MAR) in computed tomography (CT) images. However, most of the existing approaches put less emphasis on modelling and embedding the intrinsic prior knowledge underlying this specific MAR task into their network designs. Against this issue, we propose an adaptive convolutional dictionary network (ACDNet), which leverages both model-based and learning-based methods. Specifically, we explore the prior structures of metal artifacts, e.g., non-local repetitive streaking patterns, and encode them as an explicit weighted convolutional dictionary model. Then, a simple-yet-effective algorithm is carefully designed to solve the model. By unfolding every iterative substep of the proposed algorithm into a network module, we explicitly embed the prior structure into a deep network, i.e., a clear interpretability for the MAR task. Furthermore, our ACDNet can automatically learn the prior for artifact-free CT images via training data and adaptively adjust the representation kernels for each input CT image based on its content. Hence, our method inherits the clear interpretability of model-based methods and maintains the powerful representation ability of learning-based methods. Comprehensive experiments executed on synthetic and clinical datasets show the superiority of our ACDNet in terms of effectiveness and model generalization
+Inspired by the great success of deep neural networks, learning-based methods have gained promising performances for metal artifact reduction (MAR) in computed tomography (CT) images. However, most of the existing approaches put less emphasis on modelling and embedding the intrinsic prior knowledge underlying this specific MAR task into their network designs. Against this issue, we propose an adaptive convolutional dictionary network (ACDNet), which leverages both model-based and learning-based methods. Specifically, we explore the prior structures of metal artifacts, e.g., non-local repetitive streaking patterns, and encode them as an explicit weighted convolutional dictionary model. Then, a simple-yet-effective algorithm is carefully designed to solve the model. By unfolding every iterative substep of the proposed algorithm into a network module, we explicitly embed the prior structure into a deep network, i.e., a clear interpretability for the MAR task. Furthermore, our ACDNet can automatically learn the prior for artifact-free CT images via training data and adaptively adjust the representation kernels for each input CT image based on its content. Hence, our method inherits the clear interpretability of model-based methods and maintains the powerful representation ability of learning-based methods. Comprehensive experiments executed on synthetic and clinical datasets show the superiority of our ACDNet in terms of effectiveness and model generalization.
+
+
+## Overview of ACD Model
+<div  align="center"><img src="figs/ACD.png" height="100%" width="100%" alt=""/></div>
+
 
 ## Dependicies
 
@@ -36,6 +41,13 @@ python test.py  --gpu_id 0 --data_path "data/test/" --model_dir "models/ACDNet_l
 
 ## Metric
 [PSNR/SSIM](https://github.com/hongwang01/RCDNet/tree/master/Performance_evaluation) 
+
+
+## Experiments on Synthesized DeepLesion
+<div  align="center"><img src="figs/Syn.png" height="100%" width="100%" alt=""/></div>
+
+## Experiments on Clinical Data
+<div  align="center"><img src="figs/Clinical.png" height="100%" width="100%" alt=""/></div>
 
 
 ## Citations
