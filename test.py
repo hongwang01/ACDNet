@@ -117,9 +117,6 @@ def main():
     model.eval()
     time_test = 0
     count = 0
-    psnr_per_epoch = 0
-    ssim_per_epoch = 0
-    rmsect_dudo = 0
     #for imag_idx in range(200): # for original testing, 200 clean CT images
     for imag_idx in range(1):  # for demo testing, we only provide one testing data as "test_640geo/000376_02_01/040/0.h5" due to the limitation of file size about supplementary material
         print("imag_idx:",imag_idx)
@@ -143,8 +140,6 @@ def main():
             Xouthu = tohu(Xoutclip)
             Xgthu = tohu(Xgtclip)
             Xmahu = tohu(Xmaclip)
-            rmsectdudo = torch.sqrt(torch.mean(((Xoutclip - Xgtclip) * M) ** 2))* 1000 / 0.192
-            rmsect_dudo += rmsectdudo
             idx = imag_idx *10+ mask_idx  + 1
             Xnorm = [Xoutnorm, Xmanorm, Xgtnorm]
             Xhu = [Xouthu, Xmahu, Xgthu]
@@ -152,17 +147,8 @@ def main():
             hudir = [out_hudir, input_hudir, gt_hudir]
             save_img.imwrite(idx, dir, Xnorm)
             save_img.imwrite(idx, hudir,Xhu)
-            Out_img = utils_image.tensor2uint(Xoutnorm)
-            B_img = utils_image.tensor2uint(Xgtnorm)
-            psnr_iter = utils_image.calculate_psnr(Out_img * M.data.squeeze().float().cpu().numpy(),
-                                                      B_img * M.data.squeeze().float().cpu().numpy())
-            psnr_per_epoch += psnr_iter
-            ssim_iter = utils_image.calculate_ssim(Out_img * M.data.squeeze().float().cpu().numpy(),
-                                                      B_img * M.data.squeeze().float().cpu().numpy())
-            ssim_per_epoch += ssim_iter
             print('Times: ', dur_time)
             count += 1
-    print('Avg.PSNR={:.4f}, Avg.SSIM={:.5f}'.format(psnr_per_epoch/count, ssim_per_epoch/count))
     print(100*'*')
 if __name__ == "__main__":
     main()
