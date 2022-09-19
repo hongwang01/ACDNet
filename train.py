@@ -98,9 +98,9 @@ def train_model(net, optimizer, lr_scheduler, datasets):
             newAgt = mask*(Xma - GT)
             newXgt = mask * GT
             for j in range(opt.T):
-                loss_l2Xt = float(loss_l2Xt) +  0.1 * F.mse_loss(ListX[j]*mask, newXgt)
-                loss_l1Xt = float(loss_l1Xt) +  0.1 * torch.sum(torch.abs(ListX[j]*mask - newXgt))
-                loss_l1At = float(loss_l1At) +  0.1 * torch.sum(torch.abs(mask *ListA[j]-newAgt))
+                loss_l2Xt = loss_l2Xt +  0.1 * F.mse_loss(ListX[j]*mask, newXgt)
+                loss_l1Xt = loss_l1Xt +  0.1 * torch.sum(torch.abs(ListX[j]*mask - newXgt))
+                loss_l1At = loss_l1At +  0.1 * torch.sum(torch.abs(mask *ListA[j]-newAgt))
             loss_l1Xf = torch.sum(torch.abs((ListX[-1]*mask - newXgt)))
             loss_l1Af = torch.sum(torch.abs(mask *ListA[-1]-newAgt))
             loss_l2Xf = F.mse_loss(ListX[-1]*mask,newXgt)
