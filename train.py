@@ -34,7 +34,7 @@ parser.add_argument('--Np', type=int, default=32, help='the number of channel co
 parser.add_argument('--d', type=int, default=32, help='the number of convolutional filters in common dictionary D')
 parser.add_argument('--num_res', type=int, default=3, help='Resblocks number in each ResNet')
 parser.add_argument('--T', type=int, default=10, help='Stage number T')
-parser.add_argument('--Mtau', type=float, default=1.5, help='for sparse feature map')
+parser.add_argument('--Mtau', type=float, default=0.5, help='for sparse feature map')
 parser.add_argument('--etaM', type=float, default=1, help='stepsize for updating M')
 parser.add_argument('--etaX', type=float, default=5, help='stepsize for updating X')
 parser.add_argument('--resume', type=int, default=0, help='continue to train from epoch')
