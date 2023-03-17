@@ -29,7 +29,7 @@ GPU NVIDIA Tesla V100-SMX2
 
 ## Benchmark Dataset
 
-Please refer to [InDuDoNet](https://github.com/hongwang01/InDuDoNet)
+Please refer to [InDuDoNet](https://github.com/hongwang01/InDuDoNet) and [SynDeepLesion](https://github.com/hongwang01/SynDeepLesion)
 
 ## Training
 ```
