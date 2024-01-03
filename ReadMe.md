@@ -44,7 +44,7 @@ python test.py  --gpu_id 0 --data_path "data/test/" --model_dir "models/ACDNet_l
 ```
 
 ## Metric
-[PSNR/SSIM](https://github.com/hongwang01/RCDNet/tree/master/Performance_evaluation)
+Please refer to https://github.com/hongwang01/OSCNet/tree/main/metric
 
 
 ## Experiments on Synthesized DeepLesion
